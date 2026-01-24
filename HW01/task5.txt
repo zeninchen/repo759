@@ -1,0 +1,5 @@
+a) I think it's just current directory
+b) It's a unqiue id that is giving to the the running job, which is assigned by slurm.
+c) squeue -u $USER
+d) scancel <jobid>
+f) It's requesting 1 GPU for the generic resource of the job.

@@ -1,7 +1,8 @@
-#!/bin/bash
-#SBATCH --cpus-per-task=2
-#SBATCH --job-name=FirstSlurm
-#SBATCH --output=FirstSlurm.out
-#SBATCH --error=FirstSlurm.err
+#!/usr/bin/env zsh
+#SBATCH -p instruction
+#SBATCH -t 0-00:30:00
+#SBATCH -c 2
+#SBATCH -J FirstSlurm
+#SBATCH -o FirstSlurm.out -e FirstSlurm.err
 
 hostname
