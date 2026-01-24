@@ -1,0 +1,4 @@
+cd somedir
+cat sometext.txt
+for f in sometext.txt; do echo "----- $f -----"; tail -n 5 "$f"; done
+for i in {0..6}; do echo "$i"; done
