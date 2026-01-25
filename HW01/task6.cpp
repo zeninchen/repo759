@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
     else {
         std::string input = argv[1];
         //convert the first character to integer
-        n = static_cast<int>(input[0]);
+        n = std::stoi(input[0]);
     }
     
     for(int i = 0; i <= n; ++i) {
