@@ -1,6 +1,0 @@
-I went through a) through c) 
-and understand  how to time code, 
-how to submit my assignments  
-with git, and  what the recommended 
-workflow is  when it comes  to working 
-on my assignments.
