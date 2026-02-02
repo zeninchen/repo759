@@ -29,15 +29,15 @@ int main(int argc, char* argv[])
     scan(arr, output, n);
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> elapsed = end - start;
-    std::cout << "Time taken by scan function: " << elapsed.count() << " ms" << std::endl;
+    std::cout  << elapsed.count() << std::endl;
     //Prints the first element of the output scanned array (just the value)
-    std::cout << "" << output[0] << std::endl;
+    std::cout  << output[0] << std::endl;
     //Prints the last element of the output scanned array
-    std::cout << "" << output[n-1] << std::endl;
+    std::cout  << output[n-1] << std::endl;
     //print out all the elements of the output scanned array, and the array itself
-    for(int i = 0; i < n; i++) {
-        std::cout << "arr[" << i << "] = " << arr[i] << ", output[" << i << "] = " << output[i] << std::endl;
-    }
+    // for(int i = 0; i < n; i++) {
+    //     std::cout << "arr[" << i << "] = " << arr[i] << ", output[" << i << "] = " << output[i] << std::endl;
+    // }
     //Deallocates memory when necessary.
     delete[] arr;
     delete[] output;
