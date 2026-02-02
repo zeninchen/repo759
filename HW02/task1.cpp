@@ -2,6 +2,7 @@
 #include <iostream>
 #include "scan.h"
 #include <string>
+#include <chrono>
 int main(int argc, char* argv[])
 {
     //creates an array of n random float numbers between -1.0 and 1.0. n 
