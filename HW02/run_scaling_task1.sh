@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 #SBATCH --job-name=ece759_task1_scaling
 #SBATCH --output=task1_scaling.out
 #SBATCH --error=task1_scaling.err
@@ -13,10 +13,9 @@ set -euo pipefail
 # module load python
 
 # Go to the folder containing scan.cpp/task1.cpp
-cd "$(dirname "$0")"
+cd $SLURM_SUBMIT_DIR
 
-# Compile
-g++ scan.cpp task1.cpp -Wall -O3 -std=c++17 -o task1
+
 
 # Output CSV
 out_csv="task1_times.csv"
