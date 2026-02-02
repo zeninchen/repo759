@@ -1,0 +1,6 @@
+Time taken by scan function: 8e-05 ms
+0.680375
+1.03534
+arr[0] = 0.680375, output[0] = 0.680375
+arr[1] = -0.211234, output[1] = 0.469141
+arr[2] = 0.566198, output[2] = 1.03534
