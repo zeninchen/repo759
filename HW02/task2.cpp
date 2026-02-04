@@ -26,8 +26,8 @@ int main(int argc, char* argv[]) {
     convolve(image, output, n, mask, m);
     auto end   = std::chrono::high_resolution_clock::now();
 
-    auto ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    std::cout << ms << std::endl;
+    std::chrono::duration<double, std::milli> elapsed = end - start;
+    std::cout  << elapsed.count() << std::endl;
     //Prints the first element of the resulting convolved array.
     std::cout << output[0] << std::endl;
     //Prints the last element of the resulting convolved array.

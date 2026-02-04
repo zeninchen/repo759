@@ -5,10 +5,10 @@
 void convolve(const float *image, float *output, std::size_t n, const float *mask, std::size_t m)
 {
     int half_m = (m - 1) / 2;
-    for( int x = 0; x < n; ++x )
+    for( int x = 0; x < (int)n; ++x )
     {
         
-        for( int y = 0; y < n; ++y )
+        for( int y = 0; y < (int)n; ++y )
         {
             float sum = 0.0f;
             //output at the current pixel is w[i][j]*f[x+i-(m-1)/2, y+j-(m-1)/2]
