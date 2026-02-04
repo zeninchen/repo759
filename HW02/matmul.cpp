@@ -53,12 +53,12 @@ void mmul3(const double* A, const double* B, double* C, const unsigned int n)
 {
     for (unsigned int j = 0; j < n; ++j) {
         for (unsigned int k = 0; k < n; ++k) {
-            double sum = 0.0;
+            
             for (unsigned int i = 0; i < n; ++i) {
                 //the dot product of the i th row A with the j th column of B
-                sum += A[i * n + k] * B[k * n + j];
+                C[i * n + j] += A[i * n + k] * B[k * n + j];
             }
-            C[i * n + j] = sum;
+            
         }
     }
 }
