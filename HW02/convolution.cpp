@@ -18,12 +18,12 @@ void convolve(const float *image, float *output, std::size_t n, const float *mas
                 int image_i_x_n = image_i * n;
                 for( int j = 0; j < m; ++j )
                 {
-                    
                     int image_j = y + j - half_m;
-                    if( image_i >= 0 && image_i < n && image_j >= 0 && image_j < n )
-                    {
-                        sum += mask[i * m + j] * image[image_i_x_n+ image_j];
+                    float val = 1.0f;  // default for out-of-bounds
+                    if (image_i >= 0 && image_i < (int)n && image_j >= 0 && image_j < (int)n) {
+                        val = image[image_i_x_n + image_j];
                     }
+                    sum += mask[i * m + j] * val;
                 }
             }
             output[x * n + y] = sum;
