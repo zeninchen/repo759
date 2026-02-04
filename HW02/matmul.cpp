@@ -1,5 +1,5 @@
 #include "matmul.h"
-
+#include <cstddef>
 /*
 mmul1 should have three for loops: the outer loop sweeps index i through the rows of C, the
 middle loop sweeps index j through the columns of C, and the innermost loop sweeps index k
@@ -33,12 +33,12 @@ void mmul2(const double* A, const double* B, double* C, const unsigned int n)
 {
     for (unsigned int i = 0; i < n; ++i) {
         for (unsigned int k = 0; k < n; ++k) {
-            //precompute A[i][k]
-            double a_ik = A[i * n + k];
+            double sum = 0.0;
             for (unsigned int j = 0; j < n; ++j) {
                 //the dot product of the i th row A with the j th column of B
-                C[i * n + j] += a_ik * B[k * n + j];
+                sum += A[i * n + k] * B[k * n + j];
             }
+            C[i * n + k] = sum;
         }
     }
 }
@@ -53,12 +53,12 @@ void mmul3(const double* A, const double* B, double* C, const unsigned int n)
 {
     for (unsigned int j = 0; j < n; ++j) {
         for (unsigned int k = 0; k < n; ++k) {
-            //precompute B[k][j]
-            double b_kj = B[k * n + j];
+            double sum = 0.0;
             for (unsigned int i = 0; i < n; ++i) {
                 //the dot product of the i th row A with the j th column of B
-                C[i * n + j] += A[i * n + k] * b_kj;
+                sum += A[i * n + k] * B[k * n + j];
             }
+            C[i * n + j] = sum;
         }
     }
 }
