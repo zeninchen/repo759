@@ -3,7 +3,7 @@
 #include "matmul.h"
 #include <chrono>
 #include <cstdlib>   // rand, RAND_MAX
-
+#include <vector>
 int main()
 {
     /*Generates two n×n matrices A and B containing random float numbers between 0.0 and
@@ -17,7 +17,7 @@ int main()
     double *B = new double[n * n];
     double *C = new double[n * n](); //initialize to 0
     //random float numbers between 0.0 and 1.0
-    for (int i = 0; i < n * n; i++) {
+    for (int i = 0; i < (int)(n * n); i++) {
         A[i] = static_cast<double>(rand()) / RAND_MAX;
         B[i] = static_cast<double>(rand()) / RAND_MAX;
     }
@@ -59,8 +59,8 @@ int main()
 
     //do mmul4
     // rededine A_vector and B_vector to std::vector<double>&
-    std::vector<double>& A_vector = std::vector<double>(A, A + n * n);
-    std::vector<double>& B_vector = std::vector<double>(B, B + n * n);
+    std::vector<double> A_vector(A, A + n * n);
+    std::vector<double> B_vector(B, B + n * n);
     auto start4 = std::chrono::high_resolution_clock::now();
     mmul4(A_vector, B_vector, C, n);
     //end timer
