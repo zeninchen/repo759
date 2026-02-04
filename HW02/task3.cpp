@@ -35,7 +35,8 @@ int main()
     std::cout << C[n * n - 1] << std::endl;
 
     //do mmul2 
-    //no need to reset c since it will be overwritten
+    //reset matrix C to 0
+    std::fill_n(C, n * n, 0.0);
     auto start2 = std::chrono::high_resolution_clock::now();
 
     mmul2(A, B, C, n);
@@ -48,6 +49,8 @@ int main()
     std::cout << C[n * n - 1] << std::endl;
 
     //do mmul3
+    //reset matrix C to 0
+    std::fill_n(C, n * n, 0.0);
     auto start3 = std::chrono::high_resolution_clock::now();
     mmul3(A, B, C, n);
     //end timer
@@ -61,6 +64,7 @@ int main()
     // rededine A_vector and B_vector to std::vector<double>&
     std::vector<double> A_vector(A, A + n * n);
     std::vector<double> B_vector(B, B + n * n);
+    //reset matrix C to 0
     auto start4 = std::chrono::high_resolution_clock::now();
     mmul4(A_vector, B_vector, C, n);
     //end timer
