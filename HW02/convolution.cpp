@@ -4,7 +4,7 @@
 
 void convolve(const float *image, float *output, std::size_t n, const float *mask, std::size_t m)
 {
-    int half_m = (m - 1) / 2;
+    int half_m = (m - 1) / 2;//precompute half mask size
     for( int x = 0; x < (int)n; ++x )
     {
         
@@ -13,7 +13,7 @@ void convolve(const float *image, float *output, std::size_t n, const float *mas
             float sum = 0.0f;
             //output at the current pixel is w[i][j]*f[x+i-(m-1)/2, y+j-(m-1)/2]
             for (int i = 0; i < (int)m; ++i) {
-                int ii = x + i - half_m;
+                int ii = x + i - half_m;//pre calculate index in image
                 bool in_i = (ii >= 0 && ii < (int)n);
 
                 for (int j = 0; j < (int)m; ++j) {
