@@ -12,17 +12,23 @@ void convolve(const float *image, float *output, std::size_t n, const float *mas
         {
             float sum = 0.0f;
             //output at the current pixel is w[i][j]*f[x+i-(m-1)/2, y+j-(m-1)/2]
-            for( int i = 0; i < m; ++i )
-            {
-                int image_i= (x + i - half_m);
-                int image_i_x_n = image_i * n;
-                for( int j = 0; j < m; ++j )
-                {
-                    int image_j = y + j - half_m;
-                    float val = 1.0f;  // default for out-of-bounds
-                    if (image_i >= 0 && image_i < (int)n && image_j >= 0 && image_j < (int)n) {
-                        val = image[image_i_x_n + image_j];
+            for (int i = 0; i < (int)m; ++i) {
+                int ii = x + i - half_m;
+                bool in_i = (ii >= 0 && ii < (int)n);
+
+                for (int j = 0; j < (int)m; ++j) {
+                    int jj = y + j - half_m;
+                    bool in_j = (jj >= 0 && jj < (int)n);
+
+                    float val;
+                    if (in_i && in_j) {
+                        val = image[ii * n + jj];
+                    } else if (in_i ^ in_j) {
+                        val = 1.0f;          // edge (not corner)
+                    } else {
+                        val = 0.0f;          // corner
                     }
+
                     sum += mask[i * m + j] * val;
                 }
             }
