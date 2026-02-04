@@ -4,6 +4,7 @@
 #include <chrono>
 #include <cstdlib>   // rand, RAND_MAX
 #include <vector>
+#include <algorithm>
 int main()
 {
     /*Generates two n×n matrices A and B containing random float numbers between 0.0 and

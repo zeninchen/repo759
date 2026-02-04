@@ -1,0 +1,8 @@
+f) The fastest one is the 2nd one, and then 1st and 4th being roughly the same, 
+however, 4th one is always slower than 1st one. And the 3rd is always the last.
+1st and 4th being roughly the same is reasonable since the use the same structure, 
+but 4th one use a large data structure to store the value. And 2nd one has the best locality,
+j is always the additon one, so changing j will have a small stride, achiveing a better 
+spatial locality. 1st and 4th is the 2nd one because others have small stride but k*n in the 
+inner loop will result a big stride, creating more cache misses than the 2nd one.
+The 3rd one is the worst because the two big strides : i*n and k*n is in the inner two loops.
