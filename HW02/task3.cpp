@@ -65,6 +65,7 @@ int main()
     std::vector<double> A_vector(A, A + n * n);
     std::vector<double> B_vector(B, B + n * n);
     //reset matrix C to 0
+    std::fill_n(C, n * n, 0.0);
     auto start4 = std::chrono::high_resolution_clock::now();
     mmul4(A_vector, B_vector, C, n);
     //end timer

@@ -39,7 +39,7 @@ void mmul2(const double* A, const double* B, double* C, const unsigned int n)
         }
     }
 }
-}
+
 
 /*
 mmul3 should also have three for loops, but the outermost loop in mmul1 should become the
