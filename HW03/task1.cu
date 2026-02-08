@@ -23,7 +23,7 @@ int main() {
 
     // Print the results
     for (int i = 0; i < N; ++i) {
-        printf("%d! = %d\n", i + 1, hostArray[i]);
+        printf("%d\n", hostArray[i]);
     }
     cudaFree(dA); // free device memory
 }
