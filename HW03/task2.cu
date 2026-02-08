@@ -10,7 +10,8 @@
 __global__ void compute(int* dA, int a) {
     int x = threadIdx.x; // get the thread index
     int y = blockIdx.x;  // get the block index
-    dA[threadIdx.x] = a * x + y; // compute ax+y and store in dA
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;//we need to calculate the correct index
+    dA[idx] = a * x + y; // compute ax+y and store in dA
 }
 int main() {
     //From the host, allocates an array of 16 ints on the device called dA
