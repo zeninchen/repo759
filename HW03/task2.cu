@@ -19,8 +19,8 @@ int main() {
     
     cudaMalloc((void**)&dA, N * sizeof(int));   // allocate 16 ints on GPU
 
-    const int RANGE = 10;
-    int a = rand() % (RANGE + 1); // generate a random integer a in the range [0, 10]
+    const int RANGE = 9;
+    int a = rand() % (RANGE + 1) + 1; // generate a random integer a in the range [1, 10]
 
     //Launch a kernel with 2 blocks and 8 threads per block 
     compute<<<2, 8>>>(dA, a); 
