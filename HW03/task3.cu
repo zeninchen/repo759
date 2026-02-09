@@ -1,6 +1,5 @@
-#include <cuda_runtime.h>
-#include <cstdio>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 #include "vscale.cu" // Include the vscale kernel
 
 int main(int argc, char* argv[])
