@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "vscale.cu" // Include the vscale kernel
+#include "vscale.cuh" // Include the vscale kernel
 
 int main(int argc, char* argv[])
 {

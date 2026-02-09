@@ -10,7 +10,7 @@
 __global__ void compute(int* dA, int a) {
     int x = threadIdx.x; // get the thread index
     int y = blockIdx.x;  // get the block index
-    int idx = blockIdx.x * blockDim.x + threadIdx.x;//we need to calculate the correct index
+    int idx = blockIdx.x * blockDim.x + threadIdx.x;
     dA[idx] = a * x + y; // compute ax+y and store in dA
 }
 int main() {
