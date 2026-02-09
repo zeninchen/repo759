@@ -24,23 +24,23 @@ int main(int argc, char* argv[])
         ha[i] = (float)(rand() % 2001 - 1000) / 100.0f; // Random float in [-10.0, 10.0]
         hb[i] = (float)(rand() % 101) / 100.0f; // Random float in [0.0, 1.0]
     }
-    //print a and b array
-    printf("Array a:\n");
-    for (int i = 0; i < n; ++i) {
-        printf("%f ", ha[i]);
-    }
-    printf("\nArray b:\n");
-    for (int i = 0; i < n; ++i) {
-        printf("%f ", hb[i]);
-    }
-    printf("\n");
+    // //print a and b array
+    // printf("Array a:\n");
+    // for (int i = 0; i < n; ++i) {
+    //     printf("%f ", ha[i]);
+    // }
+    // printf("\nArray b:\n");
+    // for (int i = 0; i < n; ++i) {
+    //     printf("%f ", hb[i]);
+    // }
+    // printf("\n");
     //copy the host arrays to the device
     cudaMemcpy(da, ha, n * sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(db, hb, n * sizeof(float), cudaMemcpyHostToDevice);
 
     //Launch the vscale kernel with enough blocks and threads to cover n elements
     int threads =512;
-    int blocks =1;
+    int blocks = (n + threads - 1) / threads; // Calculate the number of blocks needed
     //time the kernel execution
     cudaEvent_t start;
     cudaEvent_t stop;
@@ -65,11 +65,11 @@ int main(int argc, char* argv[])
     //print the last element of b
     printf("%f\n", hb[n-1]);
 
-    //print the b array
-    for (int i = 0; i < n; ++i) {
-        printf("%f ", hb[i]);
-    }
-    printf("\n");
+    // //print the b array
+    // for (int i = 0; i < n; ++i) {
+    //     printf("%f ", hb[i]);
+    // }
+    // printf("\n");
     
     //free the device memory
     cudaFree(da);
