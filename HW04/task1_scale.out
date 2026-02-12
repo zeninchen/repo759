@@ -1,0 +1,22 @@
+[tpb=1024] n=32 time_ms=0.01024
+[tpb=1024] n=64 time_ms=0.011104
+[tpb=1024] n=128 time_ms=0.01536
+[tpb=1024] n=256 time_ms=0.0408
+[tpb=1024] n=512 time_ms=0.20704
+[tpb=1024] n=1024 time_ms=2.65523
+[tpb=1024] n=2048 time_ms=20.9695
+[tpb=1024] n=4096 time_ms=184.821
+[tpb=1024] n=8192 time_ms=1817.82
+[tpb=1024] n=16384 time_ms=52461.8
+Wrote: task1_1024.csv
+[tpb=256] n=32 time_ms=0.009216
+[tpb=256] n=64 time_ms=0.008224
+[tpb=256] n=128 time_ms=0.011264
+[tpb=256] n=256 time_ms=0.034816
+[tpb=256] n=512 time_ms=0.234496
+[tpb=256] n=1024 time_ms=2.43814
+[tpb=256] n=2048 time_ms=20.6553
+[tpb=256] n=4096 time_ms=194.04
+[tpb=256] n=8192 time_ms=6440.1
+[tpb=256] n=16384 time_ms=52512.9
+Wrote: task1_256.csv
