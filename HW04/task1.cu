@@ -1,4 +1,6 @@
 #include "matmul.cuh" // Include the matmul kernel
+#include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char* argv[])
 {
