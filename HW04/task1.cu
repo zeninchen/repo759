@@ -31,21 +31,21 @@ int main(int argc, char* argv[])
         A[i] = (float)(rand() % 2001 - 1000) / 100.0f; // Random float in [-10.0, 10.0]
         B[i] = (float)(rand() % 2001 - 1000) / 100.0f; // Random float in [-10.0, 10.0]
     }
-    //print A and B just to verify correctness
-    printf("Matrix A:\n");
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            printf("%f ", A[i * n + j]);
-        }
-        printf("\n");
-    }
-    printf("Matrix B:\n");
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            printf("%f ", B[i * n + j]);
-        }
-        printf("\n");
-    }
+    // //print A and B just to verify correctness
+    // printf("Matrix A:\n");
+    // for (int i = 0; i < n; ++i) {
+    //     for (int j = 0; j < n; ++j) {
+    //         printf("%f ", A[i * n + j]);
+    //     }
+    //     printf("\n");
+    // }
+    // printf("Matrix B:\n");
+    // for (int i = 0; i < n; ++i) {
+    //     for (int j = 0; j < n; ++j) {
+    //         printf("%f ", B[i * n + j]);
+    //     }
+    //     printf("\n");
+    // }
     // Copy the host matrices A and B to the device
     cudaMemcpy(dA, A, n * n * sizeof(float), cudaMemcpyHostToDevice);
     cudaMemcpy(dB, B, n * n * sizeof(float), cudaMemcpyHostToDevice);
@@ -73,14 +73,14 @@ int main(int argc, char* argv[])
     //print just the last element of C to verify correctness
     printf("%f\n",C[(n-1)*n + (n-1)]); // Print the last element of C
 
-    //print the entire matrix C just to verify correctness
-    printf("Matrix C:\n");
-    for (int i = 0; i < n; ++i) {
-        for (int j = 0; j < n; ++j) {
-            printf("%f ", C[i * n + j]);
-        }
-        printf("\n");
-    }
+    // //print the entire matrix C just to verify correctness
+    // printf("Matrix C:\n");
+    // for (int i = 0; i < n; ++i) {
+    //     for (int j = 0; j < n; ++j) {
+    //         printf("%f ", C[i * n + j]);
+    //     }
+    //     printf("\n");
+    // }
     //free the device memory
     cudaFree(dA);
     cudaFree(dB);
