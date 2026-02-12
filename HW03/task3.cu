@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
     float ms;
     cudaEventElapsedTime(&ms, start, stop);
 
-    printf("%f\n", ms);
+    printf("%f\n", ms)
 
     //Copy the resulting array b back to the host and print the results
     cudaMemcpy(hb, db, n * sizeof(float), cudaMemcpyDeviceToHost);
@@ -68,7 +68,7 @@ int main(int argc, char* argv[])
     // //print the b array
     // for (int i = 0; i < n; ++i) {
     //     printf("%f ", hb[i]);
-    // }
+    // ;}
     // printf("\n");
     
     //free the device memory
