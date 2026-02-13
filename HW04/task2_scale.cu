@@ -88,7 +88,7 @@ int main(int argc, char* argv[])
     //   ./task2 myprefix       -> myprefix_1024.csv and myprefix_256.csv with R=2
     //   ./task2 myprefix 3     -> myprefix_1024.csv and myprefix_256.csv with R=3
     std::string prefix = "task2";
-    int R = 2;
+    int R = 128;
 
     if (argc > 1) prefix = argv[1];
     if (argc > 2) R = atoi(argv[2]);
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
 
         csv << "n,time_ms\n";
 
-        for (int p = 5; p <= 14; ++p) {
+        for (int p = 10; p <= 29; ++p) {
             int n = 1 << p;
 
             float ms = run_one_n(n, R, tpb);
