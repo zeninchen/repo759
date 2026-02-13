@@ -61,7 +61,7 @@ __global__ void stencil_kernel(const float* image, const float* mask, float* out
         output[g] = sh_out[tid];
     }
 }
-_host__ void stencil(const float* image,
+__host__ void stencil(const float* image,
                       const float* mask,
                       float* output,
                       unsigned int n,
