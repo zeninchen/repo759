@@ -70,7 +70,7 @@ __host__ void stencil(const float* image,
 {
     const unsigned int mask_len = 2 * R + 1;
     const unsigned int img_len  = threads_per_block + 2 * R; // tile + halos
-    const unsigned int out_len  = threads_per_block;
+
 
     const unsigned int shmem_size = (mask_len + img_len + out_len) * sizeof(float);
 
