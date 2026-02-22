@@ -5,20 +5,17 @@
 __host__ void matmul_1(const int *A, const int *B, int *C, unsigned int n,
                        unsigned int block_dim)
 {
-    //Launch the matmul kernel with enough blocks and threads to cover n*n elements
-    dim3 threads(block_dim, block_dim); // Define the number of threads per block
-    dim3 blocks((n + block_dim - 1) / block_dim, (n + block_dim - 1) / block_dim); // Calculate the number of blocks needed
-    matmul_kernel<int><<<blocks, threads>>>(A, B, C, n);
+    matmul_tiled<int>(A, B, C, n, block_dim);
 }
 __host__ void matmul_2(const float *A, const float *B, float *C, unsigned int n,
                        unsigned int block_dim)
 {
-
+    matmul_tiled<float>(A, B, C, n, block_dim);
 }
 __host__ void matmul_3(const double *A, const double *B, double *C,
                        unsigned int n, unsigned int block_dim)
 {
-
+    matmul_tiled<double>(A, B, C, n, block_dim);
 }
 
 template <typename T>
@@ -58,4 +55,16 @@ __global__ void matmul_kernel(const T* A, const T* B, T* C, unsigned int n)
     if (row < n && col < n) {
         C[row * n + col] = sum;
     }
+}
+
+template <typename T>
+__host__ void matmul_tiled(const T* A, const T* B, T* C, unsigned int n, unsigned int block_dim)
+{
+    // For this implementation we assume block_dim == BLOCK_SIZE
+    dim3 threads(BLOCK_SIZE, BLOCK_SIZE);
+    dim3 blocks((n + BLOCK_SIZE - 1) / BLOCK_SIZE,
+                (n + BLOCK_SIZE - 1) / BLOCK_SIZE);
+
+    matmul_kernel<T><<<blocks, threads>>>(A, B, C, n);
+    cudaDeviceSynchronize();
 }
