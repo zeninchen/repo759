@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --gpus-per-task=8
 #SBATCH --time=00:10:00
-#SBATCH --output=task1.out
-#SBATCH --error=task1.err
+#SBATCH --output=task1_scale.out
+#SBATCH --error=task1_scale.err
 cd $SLURM_SUBMIT_DIR
 
 ./task1_scale
