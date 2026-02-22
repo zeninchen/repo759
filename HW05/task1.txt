@@ -1,0 +1,4 @@
+d) accoding to my blockdim_sweep.csv, all the block dim peformance are about the same (8,16,32)
+e) int and float's performace is around the same while double usually takes significantly longer than the other two.
+    I think it's because of the type size, both int and float is 32 bit while double is 64 bits, 
+    so double will result in a longer memory access time

@@ -9,4 +9,4 @@
 #SBATCH --error=task1.err
 cd $SLURM_SUBMIT_DIR
 
-./task1
+./task1 16384
