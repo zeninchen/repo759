@@ -44,9 +44,10 @@ struct Times {
     float t_double_ms = 0.f;
 };
 
-static float time_one_call(void (*fn)(void), cudaEvent_t start, cudaEvent_t stop) {
+template <typename F>
+static float time_one_call(F&& fn, cudaEvent_t start, cudaEvent_t stop) {
     CUDA_CHECK(cudaEventRecord(start));
-    fn();
+    fn();  // call the lambda / functor
     CUDA_CHECK(cudaEventRecord(stop));
     CUDA_CHECK(cudaEventSynchronize(stop));
     float ms = 0.f;
