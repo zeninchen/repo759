@@ -2,18 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define BLOCK_SIZE 16
-__host__ void matmul_1(const int *A, const int *B, int *C, unsigned int n,
-                       unsigned int block_dim)
+__host__ void matmul_1(const int* A, const int* B, int* C, unsigned int n, unsigned int block_dim)
 {
     matmul_tiled<int>(A, B, C, n, block_dim);
 }
-__host__ void matmul_2(const float *A, const float *B, float *C, unsigned int n,
-                       unsigned int block_dim)
+__host__ void matmul_2(const float* A, const float* B, float* C, unsigned int n, unsigned int block_dim)
 {
     matmul_tiled<float>(A, B, C, n, block_dim);
 }
-__host__ void matmul_3(const double *A, const double *B, double *C,
-                       unsigned int n, unsigned int block_dim)
+__host__ void matmul_3(const double* A, const double* B, double* C, unsigned int n, unsigned int block_dim)
 {
     matmul_tiled<double>(A, B, C, n, block_dim);
 }
