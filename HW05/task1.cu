@@ -1,5 +1,7 @@
 #include "matmul.cuh"
-
+#include <stdio.h>
+#include <stdlib.h>
+#define BLOCK_SIZE 16
 int main( int argc, char** argv)
 {
     //usage : ./task1 n block dim
