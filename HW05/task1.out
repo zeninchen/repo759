@@ -1,0 +1,14 @@
+[n_sweep] n=32 block_dim=16
+[n_sweep] n=64 block_dim=16
+[n_sweep] n=128 block_dim=16
+[n_sweep] n=256 block_dim=16
+[n_sweep] n=512 block_dim=16
+[n_sweep] n=1024 block_dim=16
+[n_sweep] n=2048 block_dim=16
+[n_sweep] n=4096 block_dim=16
+[n_sweep] n=8192 block_dim=16
+[n_sweep] n=16384 block_dim=16
+[blockdim_sweep] n=16384 block_dim=8
+[blockdim_sweep] n=16384 block_dim=16
+[blockdim_sweep] n=16384 block_dim=32
+Wrote n_sweep.csv and blockdim_sweep_n16384.csv
