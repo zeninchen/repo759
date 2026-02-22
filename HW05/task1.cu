@@ -65,7 +65,7 @@ int main( int argc, char** argv)
     printf("%f\n", milliseconds);
 
     cudaEventRecord(start);
-    matmul_3((float*)dA, (float*)dB, (float*)dC, n, block_dim);
+    matmul_3((double*)dA, (double*)dB, (double*)dC, n, block_dim);
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
     milliseconds = 0;
