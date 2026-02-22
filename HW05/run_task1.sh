@@ -7,6 +7,7 @@
 #SBATCH --time=00:10:00
 #SBATCH --output=task1.out
 #SBATCH --error=task1.err
+#SBATCH --mem=32G
 cd $SLURM_SUBMIT_DIR
 
 ./task1 16384
