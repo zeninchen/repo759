@@ -30,7 +30,17 @@ int main( int argc, char** argv)
     double *dAd, *dBd, *dCd;
     // allocate n*n doubles, fill, cudaMalloc, cudaMemcpy, call matmul_3
     // copy back, print with %lf
-
+    //allocate host memory
+    hAi = (int*)malloc(n * n * sizeof(int));
+    hBi = (int*)malloc(n * n * sizeof(int));
+    hCi = (int*)malloc(n * n * sizeof(int));
+    hAf = (float*)malloc(n * n * sizeof(float));
+    hBf = (float*)malloc(n * n * sizeof(float));
+    hCf = (float*)malloc(n * n * sizeof(float));
+    hAd = (double*)malloc(n * n * sizeof(double));
+    hBd = (double*)malloc(n * n * sizeof(double));
+    hCd = (double*)malloc(n * n * sizeof(double));
+    //fill the host arrays with random integers
     for (int i = 0; i < n * n; ++i) {
         hAi[i] = rand() % 10; // Fill A with random integers
         hBi[i] = rand() % 10; // Fill B with random integers
