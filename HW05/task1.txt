@@ -1,4 +1,11 @@
-d) accoding to my blockdim_sweep.csv, all the block dim peformance are about the same (8,16,32)
-e) int and float's performace is around the same while double usually takes significantly longer than the other two.
+c) accoding to my blockdim_sweep.csv, all the block dim peformance are about the same (8,16,32)
+d) int and float's performace is around the same while double usually takes significantly longer than the other two.
     I think it's because of the type size, both int and float is 32 bit while double is 64 bits, 
-    so double will result in a longer memory access time
+    so double will result in a longer memory access time.
+e) 52498.113281 is the best run time for naived one 2^14 when the thread per block is 256.
+    And 5561.387207 is best run time for tiled one. The tiled one performed better because 
+    it has a better memory access with shared memory, which reduced the use of redundant access 
+    of the same memory between threads, and enable faster memory access.
+d) The run time for cpu was too long ( greater than 10 minutes) In terms of performance, 
+     the gpu out performed the cpu too much.(much less execution time) Since CPU can only perform 
+     one additon at a time, it's definetly worse than gpu where it can perform many additons in parallel.
