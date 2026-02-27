@@ -29,8 +29,11 @@ int main(int argc, char** argv) {
     float* h = (float*)std::malloc((size_t)N * sizeof(float));
 
 
-    std::uniform_real_distribution<float> dist(-1.0f, 1.0f);
-    for (unsigned int i = 0; i < N; i++) h[i] = dist(rng);
+    
+    //fill the host array with random floats in [-1, 1]
+    for(int i = 0; i < N; i++) {
+        h[i] = static_cast<float>(rand()) / RAND_MAX * 2.0f - 1.0f;
+    }
     //print out the element of array for debugging
     for (unsigned int i = 0; i < N; i++) {
         std::printf("%f ", h[i]);
