@@ -15,8 +15,8 @@ static void checkCuda(cudaError_t e, const char* msg) {
 
 int main(int argc, char** argv) {
 
-    unsigned int N = 1 << 20;             // default length (example)
-    unsigned int threads_per_block = 256; // default threads per block
+    unsigned int N = 10;             
+    unsigned int threads_per_block = 256; 
 
     if (argc > 1) {
         N = (unsigned int) strtoul(argv[1], nullptr, 10);
