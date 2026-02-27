@@ -35,10 +35,10 @@ int main(int argc, char** argv) {
         h[i] = static_cast<float>(rand()) / RAND_MAX * 2.0f - 1.0f;
     }
     //print out the element of array for debugging
-    for (unsigned int i = 0; i < N; i++) {
-        std::printf("%f ", h[i]);
-    }
-    std::printf("\n");
+    // for (unsigned int i = 0; i < N; i++) {
+    //     std::printf("%f ", h[i]);
+    // }
+    // std::printf("\n");
     // Device input
     float* d_input = nullptr;
     checkCuda(cudaMalloc((void**)&d_input, (size_t)N * sizeof(float)), "cudaMalloc d_input");
