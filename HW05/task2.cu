@@ -19,14 +19,14 @@ int main(int argc, char** argv) {
     unsigned int threads_per_block = 256; 
 
     if (argc > 1) {
-        N = (unsigned int) strtoul(argv[1], nullptr, 10);
+        N = atoi(argv[1]);
     }
     if (argc > 2) {
-        threads_per_block = (unsigned int) strtoul(argv[2], nullptr, 10);
+        threads_per_block = atoi(argv[2]);
     }
 
     // Host array: random floats in [-1, 1]
-    float* h = (float*)std::malloc((size_t)N * sizeof(float));
+    float* h = (float*)malloc((size_t)N * sizeof(float));
 
 
     
