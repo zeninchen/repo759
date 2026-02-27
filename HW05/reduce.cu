@@ -1,7 +1,7 @@
 #include "reduce.cuh"
 #include <cuda_runtime.h>
 
-__global__ void reduce_kernel(const float *g_idata, float *g_odata, unsigned int n)
+__global__ void reduce_kernel(float *g_idata, float *g_odata, unsigned int n)
 {
     extern __shared__ float sdata[];
     unsigned int tid = threadIdx.x;
