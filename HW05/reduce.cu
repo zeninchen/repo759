@@ -33,8 +33,7 @@ __host__ void reduce(float **input, float **output, unsigned int N,
 
     // Keep reducing until we get a single value
     while (true) {
-        reduce_kernel<<<num_blocks, threads_per_block,
-                        threads_per_block * sizeof(float)>>>(d_in, d_out, n);
+        reduce_kernel<<<num_blocks, threads_per_block, threads_per_block * sizeof(float)>>>(d_in, d_out, n);
         n = num_blocks;
         if (num_blocks == 1) break;
 
