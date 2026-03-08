@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Compile the two programs.
-# Adjust include/library flags here if Euler needs anything extra for CUB/Thrust.
-nvcc -O3 -std=c++14 task1_thrust.cu -o task1_thrust
-nvcc -O3 -std=c++14 task1_cub.cu    -o task1_cub
-
 # Output CSV files
 THRUST_CSV="task1_thrust_times.csv"
 CUB_CSV="task1_cub_times.csv"
