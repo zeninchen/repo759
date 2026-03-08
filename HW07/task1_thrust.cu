@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     float sum = thrust::reduce(d_in.begin(), d_in.end(), 0.0f, thrust::plus<float>());
     cudaEventRecord(stop);
     cudaEventSynchronize(stop);
-
+    float ms = 0;
     cudaEventElapsedTime(&ms, start, stop);
     //print the result of the reduction and the time taken.
     std::cout <<sum << std::endl;
