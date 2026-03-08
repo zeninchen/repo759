@@ -1,0 +1,12 @@
+#!/usr/bin/env zsh
+#SBATCH -p instruction
+#SBATCH --job-name=task1_scale
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --gpus-per-task=1
+#SBATCH --time=00:10:00
+#SBATCH --output=task1_scale.out
+#SBATCH --error=task1_scale.err
+
+cd $SLURM_SUBMIT_DIR
+bash ./task1_scale.sh
