@@ -9,4 +9,14 @@ Running n=131072
 Running n=262144
 Running n=524288
 Running n=1048576
-Wrote task1_thrust_times.csv and task1_cub_times.csv
+Running n=2097152
+Running n=4194304
+Running n=8388608
+Running n=16777216
+Running n=33554432
+Running n=67108864
+Running n=134217728
+Running n=268435456
+Running n=536870912
+Running n=1073741824
+Running n=2147483648
