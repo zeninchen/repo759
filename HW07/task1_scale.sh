@@ -8,8 +8,8 @@ CUB_CSV="task1_cub_times.csv"
 echo "n,time_ms" > "$THRUST_CSV"
 echo "n,time_ms" > "$CUB_CSV"
 
-# Sweep n = 2^10, 2^11, ..., 2^20
-for exp in $(seq 10 20); do
+# Sweep n = 2^10, 2^11, ..., 2^40
+for exp in $(seq 10 40); do
     n=$((2**exp))
     echo "Running n=$n"
 
