@@ -13,8 +13,11 @@ int main(int argc, char* argv[])
 
     count(d_in, values, counts);
 
-    for (size_t i = 0; i < values.size(); ++i) {
-        printf("Value: %d, Count: %d\n", values[i], counts[i]);
+    thrust::host_vector<int> h_values = values;
+    thrust::host_vector<int> h_counts = counts;
+
+    for (size_t i = 0; i < h_values.size(); ++i) {
+        printf("Value: %d, Count: %d\n", h_values[i], h_counts[i]);
     }
 
     return 0;
