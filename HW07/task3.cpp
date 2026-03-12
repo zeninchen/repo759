@@ -4,8 +4,7 @@
 int main() {
     omp_set_num_threads(4);
 
-    #pragma omp parallel
-    {
+    
         int tid = omp_get_thread_num();
         int nthreads = omp_get_num_threads();
 
@@ -13,9 +12,10 @@ int main() {
         {
             std::cout << "Number of threads: " << nthreads << "\n";
         }
-
-        std::cout << "I am thread No. " << tid << "\n";
-
+        #pragma omp parallel
+        {
+            std::cout << "I am thread No. " << tid << "\n";
+        }
         #pragma omp for
         for (int a = 1; a <= 8; ++a) {
             long long fact = 1;
