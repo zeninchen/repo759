@@ -1,0 +1,17 @@
+Running n=32
+Running n=64
+Running n=128
+Running n=256
+Running n=512
+Running n=1024
+Running n=2048
+Running n=4096
+Running n=8192
+Running n=16384
+Running n=32768
+Running n=65536
+Running n=131072
+Running n=262144
+Running n=524288
+Running n=1048576
+Wrote task2_times.csv
