@@ -24,7 +24,7 @@ int main() {
             }
             std::cout << a << "!=" << fact << "\n";
         }
-    }
+    
 
     return 0;
 }
