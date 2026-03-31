@@ -4,7 +4,7 @@ module simd(
 
     //start should be high for one cycle, and will be ignored until the op_done goes high again
     input logic start,
-    input logic [1:0] operation_type,
+    input logic [2:0] operation_type,
     //length of the vectors
     input logic [31:0] n, 
 
@@ -33,13 +33,23 @@ module simd(
 );
     parameter n_of_lanes =4;
     //three stages -> load, execute, writeback
-    //we need to do n/n_of_lanes
-    //the n_of_lanes will be 2^x, so we can just do n >> x to ge the number of repeated operation
-    //we also need  a low bit mask, to identify if there is any additional cycles that does not use all the lanes
-    // for example if lanes =4 =2^x; x = 2, n >> 2 to get the number of repeated operation,
-    // and n && 32h'00000003 (last 2 bit 1)
-    localparam shift_bits = 2; 2^shift_bits=4;
-    localparam bit_masks = 32'h00000003
+    //instaniate control 
+    control #(.n_of_lanes(n_of_lanes)) control_unit(
+        .clk(clk),
+        .rst_n(rst_n),
+        .start(start),
+        .operation_type(operation_type),
+        .n(n),
+        .a_address(a_address),
+        .b_address(b_address),
+        .c_address(c_address),
+        .read_address(read_address),
+        .read_data(read_data),
+        .write_en(write_en),
+        .write_address(write_address),
+        .write_data(write_data),
+        .op_done(op_done)
+    );
 
     
 
