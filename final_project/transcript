@@ -1,0 +1,506 @@
+# Compile of alu.sv was successful.
+# Compile of control.sv failed with 2 errors.
+# Compile of simd_accerlator_top_level.sv failed with 1 errors.
+# Compile of tb_simd.sv was successful.
+# 4 compiles, 2 failed with 3 errors.
+# Compile of alu.sv was successful.
+# Compile of control.sv failed with 1 errors.
+# Compile of simd_accerlator_top_level.sv was successful with warnings.
+# Compile of tb_simd.sv was successful.
+# 4 compiles, 1 failed with 1 error.
+# Compile of alu.sv was successful.
+# Compile of control.sv was successful.
+# Compile of simd_accerlator_top_level.sv was successful with warnings.
+# Compile of tb_simd.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_simd
+# vsim -gui work.tb_simd 
+# Start time: 15:46:45 on Apr 03,2026
+# Loading sv_std.std
+# Loading work.tb_simd
+# Loading work.simd
+# Loading work.control
+# Loading work.alu
+add wave -position insertpoint sim:/tb_simd/dut/*
+run -all
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(186)
+#    Time: 245 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 186
+# Compile of tb_simd.sv failed with 6 errors.
+# Compile of tb_simd.sv failed with 6 errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(186)
+#    Time: 245 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 186
+# Compile of alu.sv was successful.
+# Compile of control.sv was successful.
+# Compile of simd_accerlator_top_level.sv was successful with warnings.
+# Compile of tb_simd.sv failed with 1 errors.
+# 4 compiles, 1 failed with 1 error.
+# Compile of tb_simd.sv failed with 4 errors.
+# Compile of tb_simd.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_simd
+# Loading work.simd
+# Loading work.control
+# Loading work.alu
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# ==============================================
+# TEST: ADD_TEST_N10
+# OPERATION: VECTOR ADD
+# 
+# Loading input vectors into external memory...
+# 
+# A vector:
+#   A[0] = 1 (0x00000001)
+#   A[1] = 2 (0x00000002)
+#   A[2] = 3 (0x00000003)
+#   A[3] = 4 (0x00000004)
+#   A[4] = 5 (0x00000005)
+#   A[5] = 6 (0x00000006)
+#   A[6] = 7 (0x00000007)
+#   A[7] = 8 (0x00000008)
+#   A[8] = 9 (0x00000009)
+#   A[9] = 10 (0x0000000a)
+# 
+# B vector:
+#   B[0] = 10 (0x0000000a)
+#   B[1] = 20 (0x00000014)
+#   B[2] = 30 (0x0000001e)
+#   B[3] = 40 (0x00000028)
+#   B[4] = 50 (0x00000032)
+#   B[5] = 60 (0x0000003c)
+#   B[6] = 70 (0x00000046)
+#   B[7] = 80 (0x00000050)
+#   B[8] = 90 (0x0000005a)
+#   B[9] = 100 (0x00000064)
+# [285000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [285000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [285000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [285000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [295000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [295000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# [295000] WRITE lane=2 addr=70 data=77 (0x0000004d)
+# [295000] WRITE lane=3 addr=71 data=88 (0x00000058)
+# [305000] WRITE lane=0 addr=72 data=99 (0x00000063)
+# [305000] WRITE lane=1 addr=73 data=110 (0x0000006e)
+# 
+# Result vector:
+#   C[0] = 11 (0x0000000b)
+#   C[1] = 22 (0x00000016)
+#   C[2] = 33 (0x00000021)
+#   C[3] = 44 (0x0000002c)
+#   C[4] = 55 (0x00000037)
+#   C[5] = 66 (0x00000042)
+#   C[6] = 77 (0x0000004d)
+#   C[7] = 88 (0x00000058)
+#   C[8] = 99 (0x00000063)
+#   C[9] = 110 (0x0000006e)
+# END TEST: ADD_TEST_N10
+# ==============================================
+# 
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(263)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 263
+add wave -position insertpoint sim:/tb_simd/dut/control_unit/*
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# ==============================================
+# TEST: ADD_TEST_N10
+# OPERATION: VECTOR ADD
+# 
+# Loading input vectors into external memory...
+# 
+# A vector:
+#   A[0] = 1 (0x00000001)
+#   A[1] = 2 (0x00000002)
+#   A[2] = 3 (0x00000003)
+#   A[3] = 4 (0x00000004)
+#   A[4] = 5 (0x00000005)
+#   A[5] = 6 (0x00000006)
+#   A[6] = 7 (0x00000007)
+#   A[7] = 8 (0x00000008)
+#   A[8] = 9 (0x00000009)
+#   A[9] = 10 (0x0000000a)
+# 
+# B vector:
+#   B[0] = 10 (0x0000000a)
+#   B[1] = 20 (0x00000014)
+#   B[2] = 30 (0x0000001e)
+#   B[3] = 40 (0x00000028)
+#   B[4] = 50 (0x00000032)
+#   B[5] = 60 (0x0000003c)
+#   B[6] = 70 (0x00000046)
+#   B[7] = 80 (0x00000050)
+#   B[8] = 90 (0x0000005a)
+#   B[9] = 100 (0x00000064)
+# [285000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [285000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [285000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [285000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [295000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [295000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# [295000] WRITE lane=2 addr=70 data=77 (0x0000004d)
+# [295000] WRITE lane=3 addr=71 data=88 (0x00000058)
+# [305000] WRITE lane=0 addr=72 data=99 (0x00000063)
+# [305000] WRITE lane=1 addr=73 data=110 (0x0000006e)
+# 
+# Result vector:
+#   C[0] = 11 (0x0000000b)
+#   C[1] = 22 (0x00000016)
+#   C[2] = 33 (0x00000021)
+#   C[3] = 44 (0x0000002c)
+#   C[4] = 55 (0x00000037)
+#   C[5] = 66 (0x00000042)
+#   C[6] = 77 (0x0000004d)
+#   C[7] = 88 (0x00000058)
+#   C[8] = 99 (0x00000063)
+#   C[9] = 110 (0x0000006e)
+# END TEST: ADD_TEST_N10
+# ==============================================
+# 
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(263)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 263
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[3]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_simd/dut/g_alu[3]/*'.
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[2]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_simd/dut/g_alu[2]/*'.
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[1]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_simd/dut/g_alu[1]/*'.
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[0]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_simd/dut/g_alu[0]/*'.
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[3]/alu_unit/*}
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[2]/alu_unit/*}
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[1]/alu_unit/*}
+add wave -position insertpoint {sim:/tb_simd/dut/g_alu[0]/alu_unit/*}
+restart
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# ==============================================
+# TEST: ADD_TEST_N10
+# OPERATION: VECTOR ADD
+# 
+# Loading input vectors into external memory...
+# 
+# A vector:
+#   A[0] = 1 (0x00000001)
+#   A[1] = 2 (0x00000002)
+#   A[2] = 3 (0x00000003)
+#   A[3] = 4 (0x00000004)
+#   A[4] = 5 (0x00000005)
+#   A[5] = 6 (0x00000006)
+#   A[6] = 7 (0x00000007)
+#   A[7] = 8 (0x00000008)
+#   A[8] = 9 (0x00000009)
+#   A[9] = 10 (0x0000000a)
+# 
+# B vector:
+#   B[0] = 10 (0x0000000a)
+#   B[1] = 20 (0x00000014)
+#   B[2] = 30 (0x0000001e)
+#   B[3] = 40 (0x00000028)
+#   B[4] = 50 (0x00000032)
+#   B[5] = 60 (0x0000003c)
+#   B[6] = 70 (0x00000046)
+#   B[7] = 80 (0x00000050)
+#   B[8] = 90 (0x0000005a)
+#   B[9] = 100 (0x00000064)
+# [285000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [285000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [285000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [285000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [295000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [295000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# [295000] WRITE lane=2 addr=70 data=77 (0x0000004d)
+# [295000] WRITE lane=3 addr=71 data=88 (0x00000058)
+# [305000] WRITE lane=0 addr=72 data=99 (0x00000063)
+# [305000] WRITE lane=1 addr=73 data=110 (0x0000006e)
+# 
+# Result vector:
+#   C[0] = 11 (0x0000000b)
+#   C[1] = 22 (0x00000016)
+#   C[2] = 33 (0x00000021)
+#   C[3] = 44 (0x0000002c)
+#   C[4] = 55 (0x00000037)
+#   C[5] = 66 (0x00000042)
+#   C[6] = 77 (0x0000004d)
+#   C[7] = 88 (0x00000058)
+#   C[8] = 99 (0x00000063)
+#   C[9] = 110 (0x0000006e)
+# END TEST: ADD_TEST_N10
+# ==============================================
+# 
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(263)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 263
+# Compile of tb_simd.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_simd
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# ==============================================
+# TEST: ADD_TEST_N10
+# OPERATION: VECTOR ADD
+# 
+# Loading input vectors into external memory...
+# 
+# A vector:
+#   A[0] @ addr 0 = 1 (0x00000001)
+#   A[1] @ addr 1 = 2 (0x00000002)
+#   A[2] @ addr 2 = 3 (0x00000003)
+#   A[3] @ addr 3 = 4 (0x00000004)
+#   A[4] @ addr 4 = 5 (0x00000005)
+#   A[5] @ addr 5 = 6 (0x00000006)
+#   A[6] @ addr 6 = 7 (0x00000007)
+#   A[7] @ addr 7 = 8 (0x00000008)
+#   A[8] @ addr 8 = 9 (0x00000009)
+#   A[9] @ addr 9 = 10 (0x0000000a)
+# 
+# B vector:
+#   B[0] @ addr 32 = 10 (0x0000000a)
+#   B[1] @ addr 33 = 20 (0x00000014)
+#   B[2] @ addr 34 = 30 (0x0000001e)
+#   B[3] @ addr 35 = 40 (0x00000028)
+#   B[4] @ addr 36 = 50 (0x00000032)
+#   B[5] @ addr 37 = 60 (0x0000003c)
+#   B[6] @ addr 38 = 70 (0x00000046)
+#   B[7] @ addr 39 = 80 (0x00000050)
+#   B[8] @ addr 40 = 90 (0x0000005a)
+#   B[9] @ addr 41 = 100 (0x00000064)
+# [285000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [285000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [285000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [285000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [295000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [295000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# [295000] WRITE lane=2 addr=70 data=77 (0x0000004d)
+# [295000] WRITE lane=3 addr=71 data=88 (0x00000058)
+# [305000] WRITE lane=0 addr=72 data=99 (0x00000063)
+# [305000] WRITE lane=1 addr=73 data=110 (0x0000006e)
+# 
+# Result vector:
+#   C[0] @ addr 64 = 11 (0x0000000b)
+#   C[1] @ addr 65 = 22 (0x00000016)
+#   C[2] @ addr 66 = 33 (0x00000021)
+#   C[3] @ addr 67 = 44 (0x0000002c)
+#   C[4] @ addr 68 = 55 (0x00000037)
+#   C[5] @ addr 69 = 66 (0x00000042)
+#   C[6] @ addr 70 = 77 (0x0000004d)
+#   C[7] @ addr 71 = 88 (0x00000058)
+#   C[8] @ addr 72 = 99 (0x00000063)
+#   C[9] @ addr 73 = 110 (0x0000006e)
+# END TEST: ADD_TEST_N10
+# ==============================================
+# 
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(275)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 275
+# Compile of alu.sv was successful.
+# Compile of control.sv was successful.
+# Compile of simd_accerlator_top_level.sv was successful with warnings.
+# Compile of tb_simd.sv was successful.
+# 4 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_simd
+# Loading work.simd
+# Loading work.control
+# Loading work.alu
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# [85000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [85000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [85000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [85000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [95000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [95000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# vector_add_n6 PASSED
+# [155000] WRITE lane=0 addr=80 data=99 (0x00000063)
+# [155000] WRITE lane=1 addr=81 data=88 (0x00000058)
+# [155000] WRITE lane=2 addr=82 data=77 (0x0000004d)
+# [155000] WRITE lane=3 addr=83 data=66 (0x00000042)
+# vector_sub_n4 PASSED
+# [225000] WRITE lane=0 addr=28 data=9 (0x00000009)
+# [225000] WRITE lane=1 addr=29 data=11 (0x0000000b)
+# vector_add_n2_partial_lane PASSED
+# ==============================================
+# TEST: ADD_TEST_N10
+# OPERATION: VECTOR ADD
+# 
+# Loading input vectors into external memory...
+# 
+# A vector:
+#   A[0] @ addr 0 = 1 (0x00000001)
+#   A[1] @ addr 1 = 2 (0x00000002)
+#   A[2] @ addr 2 = 3 (0x00000003)
+#   A[3] @ addr 3 = 4 (0x00000004)
+#   A[4] @ addr 4 = 5 (0x00000005)
+#   A[5] @ addr 5 = 6 (0x00000006)
+#   A[6] @ addr 6 = 7 (0x00000007)
+#   A[7] @ addr 7 = 8 (0x00000008)
+#   A[8] @ addr 8 = 9 (0x00000009)
+#   A[9] @ addr 9 = 10 (0x0000000a)
+# 
+# B vector:
+#   B[0] @ addr 32 = 10 (0x0000000a)
+#   B[1] @ addr 33 = 20 (0x00000014)
+#   B[2] @ addr 34 = 30 (0x0000001e)
+#   B[3] @ addr 35 = 40 (0x00000028)
+#   B[4] @ addr 36 = 50 (0x00000032)
+#   B[5] @ addr 37 = 60 (0x0000003c)
+#   B[6] @ addr 38 = 70 (0x00000046)
+#   B[7] @ addr 39 = 80 (0x00000050)
+#   B[8] @ addr 40 = 90 (0x0000005a)
+#   B[9] @ addr 41 = 100 (0x00000064)
+# [285000] WRITE lane=0 addr=64 data=11 (0x0000000b)
+# [285000] WRITE lane=1 addr=65 data=22 (0x00000016)
+# [285000] WRITE lane=2 addr=66 data=33 (0x00000021)
+# [285000] WRITE lane=3 addr=67 data=44 (0x0000002c)
+# [295000] WRITE lane=0 addr=68 data=55 (0x00000037)
+# [295000] WRITE lane=1 addr=69 data=66 (0x00000042)
+# [295000] WRITE lane=2 addr=70 data=77 (0x0000004d)
+# [295000] WRITE lane=3 addr=71 data=88 (0x00000058)
+# [305000] WRITE lane=0 addr=72 data=99 (0x00000063)
+# [305000] WRITE lane=1 addr=73 data=110 (0x0000006e)
+# 
+# Result vector:
+#   C[0] @ addr 64 = 11 (0x0000000b)
+#   C[1] @ addr 65 = 22 (0x00000016)
+#   C[2] @ addr 66 = 33 (0x00000021)
+#   C[3] @ addr 67 = 44 (0x0000002c)
+#   C[4] @ addr 68 = 55 (0x00000037)
+#   C[5] @ addr 69 = 66 (0x00000042)
+#   C[6] @ addr 70 = 77 (0x0000004d)
+#   C[7] @ addr 71 = 88 (0x00000058)
+#   C[8] @ addr 72 = 99 (0x00000063)
+#   C[9] @ addr 73 = 110 (0x0000006e)
+# END TEST: ADD_TEST_N10
+# ==============================================
+# 
+# All tests passed.
+# ** Note: $finish    : C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv(275)
+#    Time: 310 ns  Iteration: 1  Instance: /tb_simd
+# 1
+# Break in Module tb_simd at C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv line 275
