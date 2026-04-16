@@ -1,8 +1,13 @@
 # SIMD Accelerator — SystemVerilog
 
 ## Overview
-Parameterized SIMD accelerator implemented in SystemVerilog with a multi-lane ALU and FSM-based control. Supports basic vector operations including add, dot product, reduction, and prefix scan.
-[Schematic](https://github.com/zeninchen/repo759/blob/main/final_project/top_level_schematic.drawio)
+
+Parameterized SIMD accelerator implemented in SystemVerilog with a multi-lane ALU and FSM-based control. 
+
+Supports basic vector operations including add, dot product, reduction, and prefix scan.
+
+[Design Schematic](https://github.com/zeninchen/repo759/blob/main/final_project/top_level_schematic.drawio)
+
 ---
 
 ## ⚙️ How to Run / Simulate
