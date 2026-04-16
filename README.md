@@ -6,7 +6,7 @@ Parameterized SIMD accelerator implemented in SystemVerilog with a multi-lane AL
 
 Supports basic vector operations including add, dot product, reduction, and prefix scan.
 
-[Design Schematic](https://github.com/zeninchen/repo759/blob/main/final_project/top_level_schematic.drawio)
+[Design Schematic](https://github.com/zeninchen/repo759/blob/main/final_project/top_level_schematic.svg)
 
 ---
 
