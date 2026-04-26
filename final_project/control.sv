@@ -28,10 +28,18 @@ module control#(
     // and n && 32h'00000003 (last 2 bit 1)
     localparam shift_bits = $clog2(n_of_lanes); //2^shift_bits=4;
     localparam bit_masks = 32'hFFFF_FFFF >> (32-shift_bits); //if n_of_lanes =4, shift_bits =2, bit_masks = 0x0000_0003
+
+
+    ////reduction basics///////
+    //for reduction we will use interleaved addressing
+    //we start with stride =1, and then double the stride evry iteration, until is more or equal to n/2
+    ///////////////////////////
+    logic [31:0] stride; //to calculate the stride for reduction
+    logic step_complete; //signal to indicate we finish a step and it time to increse the stride
     typedef enum logic [1:0] { 
         IDLE,
         EX,
-        BUFF,
+        STEP,
         DONE
      } state_t;
      state_t state, next_state;
@@ -73,7 +81,15 @@ module control#(
             address_offset <= address_offset + (n_of_lanes); //the memory is in array form
         end
     end
-
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            stride <= 1;
+        end else if (state == IDLE && start) begin
+            stride <= 1;
+        end else if (step_complete == 1'b1) begin
+            stride <= stride << 1; //shift left by 1 is the same as multiply by 2
+        end
+    end
     //combinational logic to determine the next state
     always_comb begin : state_comb
         next_state = state; //default to stay in the same state
@@ -106,11 +122,16 @@ module control#(
                         write_address[i] = c_address + address_offset + i;
                     end
                     if (full_lane_complete) next_state = DONE;
+                end else if(operation_type[2:1] == 2'b01) begin
+                    //reduction
+                    alu_op = {1'b1, operation_type[0]};
+                    for(int i = 0; i < n_of_lanes; i++) begin
+                    end
                 end else begin
                     next_state = DONE;
                 end
             end
-            BUFF: begin
+            STEP: begin
                 //we can directly go to done, since we will write the data in the same cycle as we prepare the data
                 next_state = DONE;
             end
