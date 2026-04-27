@@ -81,6 +81,7 @@ module control#(
             address_offset <= address_offset + (n_of_lanes); //the memory is in array form
         end
     end
+
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             stride <= 1;
@@ -88,6 +89,21 @@ module control#(
             stride <= 1;
         end else if (step_complete == 1'b1) begin
             stride <= stride << 1; //shift left by 1 is the same as multiply by 2
+        end
+    end
+    //the address offset for reduction of each issues within the same step
+    //I think the address offset can be combines with resduction issue offset, 
+    //but for clearity I will keep them separate
+    logic [31:0] reduction_issue_offset;
+    always_ff @(posedge clk or negedge rst_n) begin
+        if (!rst_n) begin
+            reduction_issue_offset <= 0;
+        end else if ((state == IDLE && start) || step_complete == 1'b1) begin
+            reduction_issue_offset <= 0;
+        end else if (state == EX || state == STEP) begin
+            //it's stride * 2 * n of lanes,
+            //each lanes computes 2 data for the 2*
+            reduction_issue_offset <= reduction_issue_offset + stride << (shift_bits+1); //issue the next step of reduction, we will process stride*n_of_lanes data in each step
         end
     end
     //combinational logic to determine the next state
@@ -101,10 +117,17 @@ module control#(
         //default the write enable and write address to 0, we will set them in the execute stage, since they are related to the alu enable and address offset
         write_en = '{default:1'b0};
         write_address = '{default:32'b0};
+
+        //reduction
+        step_complete = 1'b0; //default to not complete
         unique case(state)
             IDLE: begin
                 if (start) begin
-                    next_state = EX;                  
+                    //if reduction we go to step state
+                    if(operation_type[2:1] == 2'b01) begin
+                        next_state = STEP;
+                    end else
+                        next_state = EX;                  
                 end            
             end
             EX: begin
@@ -126,14 +149,54 @@ module control#(
                     //reduction
                     alu_op = {1'b1, operation_type[0]};
                     for(int i = 0; i < n_of_lanes; i++) begin
+                        read_addr1[i] = a_address + reduction_issue_offset + i*stride*2; //interleaved addressing for reduction
+                        read_addr2[i] = a_address + reduction_issue_offset + i*stride*2 + stride; //the second operand is stride away from the first operand
+                        enable_alu[i] = (reduction_issue_offset + i*stride*2) < n; //if the read address is out of bound, we disable the alu for that lane
+                        write_en[i] = enable_alu[i];
+                        //we write to the same a address for reduction
+                        //for interleaved addressing, the result will be right to the address of the first operand
+                        write_address[i] = a_address + reduction_issue_offset + i*stride*2;
+                    end
+                    //when we completed a step
+                    if(stride << 1 >= n) begin
+                        //if stride *2 >= n, it means we completed the reduction,(the current step is last step)
+                        next_state = DONE;
+                    end
+                    else if((reduction_issue_offset + stride << (shift_bits + 1)) >= n) begin
+                        next_state = STEP;
+                        step_complete = 1'b1;
                     end
                 end else begin
                     next_state = DONE;
                 end
             end
             STEP: begin
-                //we can directly go to done, since we will write the data in the same cycle as we prepare the data
-                next_state = DONE;
+                //we want the step to also issue the first reduction operation
+                if(operation_type[2:1] == 2'b01) begin
+                    //reduction
+                    alu_op = {1'b1, operation_type[0]};
+                    for(int i = 0; i < n_of_lanes; i++) begin
+                        //read_addr1[i] = a_address + reduction_issue_offset + i*stride*2; //interleaved addressing for reduction
+                        //read_addr2[i] = a_address + reduction_issue_offset + i*stride*2 + stride; //the second operand is stride away from the first operand
+                        //reduction_issues_offset is always going to be 0 for the first issue in the step,
+                        read_addr1[i] = a_address + i*stride*2; //interleaved addressing for reduction
+                        read_addr2[i] = a_address + i*stride*2 + stride; //
+                        enable_alu[i] = (i*stride*2) < n; //if the read address is out of bound, we disable the alu for that lane
+                        write_en[i] = enable_alu[i];
+                        //we write to the same a address for reduction
+                        //for interleaved addressing, the result will be right to the address of the first operand
+                        write_address[i] = a_address + reduction_issue_offset + i*stride*2;
+                    end
+                    //when we completed a step immediately again
+                    if((stride << (shift_bits + 1)) >= n) begin
+                        step_complete = 1'b1;
+                    end
+                    else begin
+                        //when we need mutiple issues
+                        //we go to execute stage
+                        next_state = EX;
+                    end
+                end
             end
             DONE: begin
                 op_done = 1'b1; //indicate the operation is done
