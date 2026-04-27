@@ -1,4 +1,11 @@
-C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv {2 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv
+C:/Users/User/Documents/ECE759/repo759/final_project/control.sv {1 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/control.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module control
+
+Top level modules:
+	control
+
+} {} {}} C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv {2 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module simd
 ** Warning: C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv(25): (vlog-13314) Defaulting port 'read_data1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -7,12 +14,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	simd
 
-} {} {}} C:/Users/User/Documents/ECE759/repo759/final_project/control.sv {1 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/control.sv
+} {} {}} C:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv {1 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module control
+-- Compiling module tb_reduction
 
 Top level modules:
-	control
+	tb_reduction
 
 } {} {}} C:/Users/User/Documents/ECE759/repo759/final_project/alu.sv {1 {vlog -work work -sv -stats=none C:/Users/User/Documents/ECE759/repo759/final_project/alu.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

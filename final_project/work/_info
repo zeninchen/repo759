@@ -11,101 +11,126 @@ cModel Technology
 dC:/Users/User/Documents/ECE552
 valu
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1775251942
+!s110 1777329153
 !i10b 1
 !s100 Y0ai_KKiO8cWA2_20hh_?3
-Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IBj=k]1401_]da0RkJS1:R0
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z4 dC:/Users/User/Documents/ECE759/repo759/final_project
-w1775247407
+Z3 dC:/Users/User/Documents/ECE759/repo759/final_project
+w1777329146
 8C:/Users/User/Documents/ECE759/repo759/final_project/alu.sv
 FC:/Users/User/Documents/ECE759/repo759/final_project/alu.sv
-!i122 22
+!i122 43
 L0 1 20
-Z5 OV;L;2020.1;71
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1775251942.000000
+!s108 1777329153.000000
 !s107 C:/Users/User/Documents/ECE759/repo759/final_project/alu.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/User/Documents/ECE759/repo759/final_project/alu.sv|
 !i113 1
-Z7 o-work work -sv
-Z8 tCvgOpt 0
+Z5 o-work work -sv
+Z6 tCvgOpt 0
 vcontrol
 R0
-R1
+!s110 1777330209
 !i10b 1
-!s100 ?d2X:8HdIAa^aIS@7Cni03
+!s100 LMJ4Di]5jiL3>OT@3OT0L1
+R1
+InC_?4NKOQ_bSH:`Fb>98e1
 R2
-IhbPNk=_MKKU=?UGRR9]z60
-R3
 S1
-R4
-w1775251506
+R3
+w1777330204
 8C:/Users/User/Documents/ECE759/repo759/final_project/control.sv
 FC:/Users/User/Documents/ECE759/repo759/final_project/control.sv
-!i122 23
-L0 1 123
-R5
+!i122 48
+L0 1 225
+R4
 r1
 !s85 0
 31
-R6
+!s108 1777330209.000000
 !s107 C:/Users/User/Documents/ECE759/repo759/final_project/control.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/User/Documents/ECE759/repo759/final_project/control.sv|
 !i113 1
-R7
-R8
+R5
+R6
 vsimd
 R0
-R1
+Z7 !s110 1777326597
 !i10b 1
 !s100 d1kh5Td@?0ec8jUZRT3>H0
-R2
+R1
 IJ?H_i_h_zUM<kkP:L:DH?2
-R3
+R2
 S1
-R4
+R3
 w1775248279
 8C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv
 FC:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv
-!i122 24
+!i122 32
 L0 1 168
-R5
+R4
 r1
 !s85 0
 31
-R6
+!s108 1777326596.000000
 !s107 C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/User/Documents/ECE759/repo759/final_project/simd_accerlator_top_level.sv|
 !i113 1
-R7
-R8
-vtb_simd
-R0
-R1
-!i10b 1
-!s100 >Q]:6[9IWF;d3R=k@YCSX2
-R2
-IB3W7o=IFUmjD6GWO8=VBP3
-R3
-S1
-R4
-w1775251864
-8C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv
-FC:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv
-!i122 25
-L0 3 275
 R5
+R6
+vtb_reduction
+R0
+!s110 1777329785
+!i10b 1
+!s100 <[6:AWIQP@NUZBN^6?@5C3
+R1
+I46z1aT?]2kj8LJGXk0FZ@1
+R2
+S1
+R3
+w1777329779
+8C:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv
+FC:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv
+!i122 46
+L0 3 224
+R4
 r1
 !s85 0
 31
+!s108 1777329785.000000
+!s107 C:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/User/Documents/ECE759/repo759/final_project/tb_reduction.sv|
+!i113 1
+R5
 R6
+vtb_simd
+R0
+R7
+!i10b 1
+!s100 >Q]:6[9IWF;d3R=k@YCSX2
+R1
+IB3W7o=IFUmjD6GWO8=VBP3
+R2
+S1
+R3
+w1775251864
+8C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv
+FC:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv
+!i122 33
+L0 3 275
+R4
+r1
+!s85 0
+31
+!s108 1777326597.000000
 !s107 C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/User/Documents/ECE759/repo759/final_project/tb_simd.sv|
 !i113 1
-R7
-R8
+R5
+R6
